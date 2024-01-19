@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function Register() {
+  useEffect(() => {
+    document.title = "Registrarse - Consulta app";
+  }, []);
+
   return (
     <div className="">
       <>

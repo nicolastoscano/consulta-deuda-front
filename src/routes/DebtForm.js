@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function DebtForm() {
+  useEffect(() => {
+    document.title = "Consulta app";
+  }, []);
+
   return (
     <>
       <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">

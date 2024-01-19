@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Login() {
+  useEffect(() => {
+    document.title = "Iniciar sesion - Consulta app";
+  }, []);
+
   return (
     <>
       <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
