@@ -8,6 +8,10 @@ import DebtForm from "./routes/DebtForm";
 import Register from "./routes/Register";
 import Payments from "./routes/Payments";
 import Login from "./routes/Login";
+import Tramites from "./routes/Tramites";
+import Home from "./routes/Home";
+import Turnos from "./routes/Turnos";
+import Servicios from "./routes/Servicios";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +20,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/consulta",
         element: <DebtForm />,
       },
       {
@@ -29,6 +38,18 @@ const router = createBrowserRouter([
       {
         path: "/ingresar",
         element: <Login />,
+      },
+      {
+        path: "/tramites",
+        element: <Tramites />,
+      },
+      {
+        path: "/turnos",
+        element: <Turnos />,
+      },
+      {
+        path: "/servicios",
+        element: <Servicios />,
       },
     ],
   },

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 
 function Root() {
   return (
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="flex flex-col min-h-screen">
       <header>
         <Navbar />
       </header>
@@ -19,3 +19,5 @@ function Root() {
 }
 
 export default Root;
+
+// className="fixed bottom-0 w-full"

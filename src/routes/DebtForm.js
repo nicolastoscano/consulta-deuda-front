@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 function DebtForm() {
   useEffect(() => {
-    document.title = "Consulta app";
+    document.title = "Consulta";
   }, []);
 
   return (
