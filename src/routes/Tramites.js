@@ -9,7 +9,7 @@ function Tramites() {
   }, []);
 
   return (
-    <div className="flex gap-7 p-5 justify-center flex-wrap self-start">
+    <div className="flex gap-7 p-5 justify-center flex-wrap self-start mb-20">
       <div className=" rounded-md w-64 h-96 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200">
         <div className=" rounded-xl h-36 w-36 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
           <img alt="iconoTramite" src={carIcon} className=" h-32" />

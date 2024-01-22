@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className=" bg-gray-800 w-full flex justify-center p-3">
+    <div className=" bg-gray-800 w-full flex justify-center p-3 fixed bottom-0">
       <div className="flex justify-between w-full max-w-7xl items-center">
         <div>
           <img

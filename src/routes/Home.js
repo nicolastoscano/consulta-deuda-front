@@ -6,9 +6,9 @@ function Home() {
   return (
     <div className=" flex flex-col items-center">
       <div>
-        <img src={landingPhoto} className=" mb-4" />
+        <img src={landingPhoto} className=" mb-4 md: h-72" />
       </div>
-      <div className="flex gap-4 flex-wrap justify-center mb-4">
+      <div className="flex gap-4 flex-wrap justify-center mb-20">
         <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200">
           <div className=" rounded-xl h-36 w-36 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
             <img alt="iconoTramite" src={paperIcon} className=" h-28" />

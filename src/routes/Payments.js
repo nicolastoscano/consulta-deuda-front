@@ -8,7 +8,7 @@ function Payments() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 p-5 items-center">
+    <div className="flex flex-col gap-4 p-5 items-center mb-20">
       {payments.map((payment) => (
         <PaymentCard {...payment} />
       ))}
