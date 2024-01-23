@@ -10,8 +10,8 @@ import Payments from "./routes/Payments";
 import Login from "./routes/Login";
 import Tramites from "./routes/Tramites";
 import Home from "./routes/Home";
-import Turnos from "./routes/Turnos";
-import Servicios from "./routes/Servicios";
+import Servicios from "./routes/Services";
+import AppointmentForm from "./routes/AppointmentForm";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
         element: <Tramites />,
       },
       {
-        path: "/turnos",
-        element: <Turnos />,
-      },
-      {
         path: "/servicios",
         element: <Servicios />,
+      },
+      {
+        path: "/turnos",
+        element: <AppointmentForm />,
       },
     ],
   },

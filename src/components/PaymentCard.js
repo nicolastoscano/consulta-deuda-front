@@ -1,6 +1,6 @@
 function PaymentCard({ fechaDePago, detalle, monto, id }) {
   return (
-    <div className="border-2 rounded-md max-w-7xl p-4">
+    <div className="rounded-md max-w-7xl p-4 bg-white shadow-md">
       <div className="px-4 sm:px-0">
         <h3 className="text-base font-semibold leading-7 text-gray-900">
           Comprobante de pago {id}
