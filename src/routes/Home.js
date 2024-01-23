@@ -19,26 +19,26 @@ function Home() {
           className=" md:object-cover w-full h-full"
         />
       </div>
-      <div className="flex  bg-gray-800 text-slate-300 mb-6 w-full justify-start p-4 font-bold text-lg">
+      <div className="flex  bg-gray-800 text-slate-300 mb-6 w-full justify-start p-4 font-bold text-lg shadow-lg md:w-3/4">
         Nombre del municipio
       </div>
       <div className="flex gap-8 flex-wrap justify-center mb-20">
         <Link to={"/tramites"}>
-          <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200">
+          <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200 transform transition-transform hover:scale-105">
             <div className=" rounded-xl h-36 w-36 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
               <img alt="iconoTramite" src={paperIcon} className=" h-20" />
             </div>
             <h2 className=" text-2xl font-semibold">Tramites</h2>
           </div>
         </Link>
-        <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200">
+        <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200 transform transition-transform hover:scale-105">
           <div className=" rounded-xl h-36 w-36 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
             <img alt="icono servicios" src={servicesIcon} className=" h-20" />
           </div>
           <h2 className=" text-2xl font-semibold">Servicios</h2>
         </div>
         <Link to={"/turnos"}>
-          <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200">
+          <div className=" rounded-md w-52 h-56 p-4 flex flex-col justify-center items-center gap-2 shadow-lg border bg-slate-200  transform transition-transform hover:scale-105">
             <div className=" rounded-xl h-36 w-36 flex items-center justify-center bg-gradient-to-r from-sky-500 to-indigo-500">
               <img alt="icono turno" src={appointmentIcon} className=" h-20" />
             </div>
