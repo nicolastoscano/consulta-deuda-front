@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./routes/root";
-import DebtForm from "./routes/DebtForm";
+import DomainDebt from "./routes/DomainDebt";
 import Register from "./routes/Register";
 import Payments from "./routes/UserPayments";
 import Login from "./routes/Login";
@@ -14,6 +14,7 @@ import Servicios from "./routes/Services";
 import AppointmentForm from "./routes/AppointmentForm";
 import UserProvider from "./context/UserContext";
 import UserAppointments from "./routes/UserAppointments";
+import Automotor from "./routes/Automotor";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +25,6 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/consulta",
-        element: <DebtForm />,
       },
       {
         path: "/registrarse",
@@ -43,7 +40,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/tramites",
-        element: <Tramites />,
+        children: [
+          {
+            index: true,
+            element: <Tramites />,
+          },
+          {
+            path: "automotor",
+            children: [
+              {
+                index: true,
+                element: <Automotor />,
+              },
+              {
+                path: "consultadeuda",
+                element: <DomainDebt />,
+              },
+            ],
+          },
+        ],
       },
       {
         path: "/servicios",

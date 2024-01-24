@@ -5,10 +5,10 @@ import { UserContext } from "../context/UserContext";
 
 function UserAppointments() {
   useEffect(() => {
-    document.title = "Pagos - Consulta app";
+    document.title = "Mis turnos - Consulta app";
   }, []);
 
-  const { user, setIsUser, isUser } = useContext(UserContext);
+  const { isUser } = useContext(UserContext);
 
   return (
     <div className="flex flex-col gap-4 p-5 items-center mb-20">

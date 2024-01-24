@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function DebtForm() {
+function DomainDebt() {
   useEffect(() => {
     document.title = "Consulta";
   }, []);
@@ -25,7 +25,7 @@ function DebtForm() {
                 htmlFor="documento"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Numero de documento
+                Dominio del vehiculo
               </label>
               <div className="mt-2">
                 <input
@@ -74,4 +74,4 @@ function DebtForm() {
   );
 }
 
-export default DebtForm;
+export default DomainDebt;

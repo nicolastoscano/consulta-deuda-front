@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
@@ -7,7 +7,7 @@ function Login() {
     document.title = "Iniciar sesion - Consulta app";
   }, []);
 
-  const { user, setIsUser, isUser } = useContext(UserContext);
+  const { setIsUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {

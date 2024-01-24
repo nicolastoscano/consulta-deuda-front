@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "dominio": "abc 123",
     "monto": 150000,
     "usuario": {
       "id": 1,

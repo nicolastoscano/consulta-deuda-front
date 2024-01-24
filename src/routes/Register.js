@@ -7,7 +7,7 @@ function Register() {
     document.title = "Registrarse - Consulta app";
   }, []);
 
-  const { user, setIsUser, isUser } = useContext(UserContext);
+  const { setIsUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
