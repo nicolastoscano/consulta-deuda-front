@@ -1,38 +1,35 @@
-function PaymentCard({ fechaDePago, detalle, monto, id }) {
+function AppointmentCard({ nombre, apellido, dni, sector, fecha }) {
   return (
-    <div className="rounded-md max-w-3xl p-4 bg-white shadow-md">
+    <div className="rounded-md w-full p-4 bg-white shadow-md md:max-w-3xl">
       <div className="px-4 sm:px-0">
         <h3 className="text-base font-semibold leading-7 text-gray-900">
-          Comprobante de pago {id}
+          Detalles de su turno
         </h3>
-        <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
-          Detalles:
-        </p>
       </div>
       <div className="mt-6 border-t border-gray-100">
         <dl className="divide-y divide-gray-100">
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm font-medium leading-6 text-gray-900">
+              Nombre y apellido
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+              {nombre} {apellido}
+            </dd>
+          </div>
+          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900">
+              Sector
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+              {sector}
+            </dd>
+          </div>
+          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900">
               Fecha
             </dt>
             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-              {fechaDePago}
-            </dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">
-              Descripcion
-            </dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-              {detalle} detalle detalle detalle detalle
-            </dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900">
-              Monto
-            </dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-              ${monto}
+              {fecha}
             </dd>
           </div>
         </dl>
@@ -41,4 +38,4 @@ function PaymentCard({ fechaDePago, detalle, monto, id }) {
   );
 }
 
-export default PaymentCard;
+export default AppointmentCard;

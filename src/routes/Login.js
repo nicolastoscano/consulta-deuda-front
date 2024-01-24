@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 function Login() {
   useEffect(() => {
     document.title = "Iniciar sesion - Consulta app";
   }, []);
 
-  const [isAadmin, setIsAdmin] = useState(false);
-  console.log(isAadmin);
+  const { user, setIsUser, isUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
+    setIsUser(true);
+    navigate("/");
   };
 
   return (
@@ -27,7 +30,7 @@ function Login() {
           </h2>
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -70,7 +73,7 @@ function Login() {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                onClick={() => setIsAdmin(true)}
+                onClick={handleLogin}
               >
                 Iniciar sesion
               </button>

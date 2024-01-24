@@ -6,12 +6,14 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./routes/root";
 import DebtForm from "./routes/DebtForm";
 import Register from "./routes/Register";
-import Payments from "./routes/Payments";
+import Payments from "./routes/UserPayments";
 import Login from "./routes/Login";
 import Tramites from "./routes/Tramites";
 import Home from "./routes/Home";
 import Servicios from "./routes/Services";
 import AppointmentForm from "./routes/AppointmentForm";
+import UserProvider from "./context/UserContext";
+import UserAppointments from "./routes/UserAppointments";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,10 @@ const router = createBrowserRouter([
         path: "/turnos",
         element: <AppointmentForm />,
       },
+      {
+        path: "/misturnos",
+        element: <UserAppointments />,
+      },
     ],
   },
 ]);
@@ -58,7 +64,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   </React.StrictMode>
 );
 

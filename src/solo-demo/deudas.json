@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "monto": 150000,
+    "usuario": {
+      "id": 1,
+      "nombre": "Juan",
+      "apelllido": "Perez",
+      "dni": 10203040,
+      "email": "juanperez@gmail.com"
+    }
+  }
+]

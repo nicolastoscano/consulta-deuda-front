@@ -1,9 +1,20 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   useEffect(() => {
     document.title = "Registrarse - Consulta app";
   }, []);
+
+  const { user, setIsUser, isUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    setIsUser(true);
+    navigate("/");
+  };
 
   return (
     <div className="">
@@ -20,7 +31,7 @@ function Register() {
             </h2>
           </div>
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6">
               <div>
                 <label
                   htmlFor="email"
@@ -63,6 +74,7 @@ function Register() {
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  onClick={handleRegister}
                 >
                   Registrarse
                 </button>

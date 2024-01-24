@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -11,8 +12,9 @@ function Navbar() {
     { name: "Inicio", href: "/", current: false },
     { name: "Tramites", href: "/tramites", current: false },
     { name: "Turnos", href: "/turnos", current: false },
-    { name: "Mis pagos", href: "/pagos", current: false },
     { name: "Servicios", href: "/servicios", current: false },
+    { name: "Mis pagos", href: "/pagos", current: false },
+    { name: "Mis turnos", href: "/misturnos", current: false },
   ]);
   const handleLinkClick = (clickedItem) => {
     const updatedNavigation = navigation.map((item) => ({
@@ -21,6 +23,12 @@ function Navbar() {
     }));
 
     setNavigation(updatedNavigation);
+  };
+
+  const { user, setIsUser, isUser } = useContext(UserContext);
+
+  const handleCerrarSesion = () => {
+    setIsUser(false);
   };
 
   return (
@@ -70,18 +78,32 @@ function Navbar() {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-3">
-                <Link to={"ingresar"}>
-                  <button className=" rounded-md bg-sky-600 p-2 font-medium text-sm">
-                    Iniciar sesion
+              {isUser ? (
+                <>
+                  <p className="text-slate-300 font-bold text-lg mr-4">
+                    Hola {user[0].nombre}!
+                  </p>
+                  <button
+                    className=" rounded-md bg-red-500 text-slate-300 p-2 font-semibold text-sm"
+                    onClick={handleCerrarSesion}
+                  >
+                    Cerrar sesion
                   </button>
-                </Link>
-                <Link to={"registrarse"}>
-                  <button className=" rounded-md bg-sky-600 p-2 font-medium text-sm">
-                    Registrarse
-                  </button>
-                </Link>
-              </div>
+                </>
+              ) : (
+                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-3">
+                  <Link to={"ingresar"}>
+                    <button className=" rounded-md bg-sky-600 p-2 font-medium text-sm">
+                      Iniciar sesion
+                    </button>
+                  </Link>
+                  <Link to={"registrarse"}>
+                    <button className=" rounded-md bg-sky-600 p-2 font-medium text-sm">
+                      Registrarse
+                    </button>
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
 
